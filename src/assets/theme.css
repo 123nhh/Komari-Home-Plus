@@ -1,0 +1,90 @@
+/* ===== 探针页 / 实例详情页主题令牌（明暗两套，随 data-appearance 切换）===== */
+
+:root,
+:root[data-appearance="dark"] {
+  /* 页面背景（dark 透明，沿用 App 深色背景） */
+  --k-bg: transparent;
+  /* 卡片 / 表面 */
+  --k-surface: rgba(255, 255, 255, 0.08);
+  --k-surface-2: rgba(255, 255, 255, 0.05);
+  --k-surface-hover: rgba(255, 255, 255, 0.14);
+  --k-border: rgba(255, 255, 255, 0.13);
+  --k-border-subtle: rgba(255, 255, 255, 0.07);
+  /* 文本 */
+  --k-text: #f2f3f5;
+  --k-text-2: rgba(255, 255, 255, 0.68);
+  --k-text-3: rgba(255, 255, 255, 0.45);
+  /* 进度轨道 */
+  --k-progress-bg: rgba(255, 255, 255, 0.12);
+  /* 指标配色 */
+  --k-cpu: #5cc9f5;
+  --k-memory: #a78bfa;
+  --k-disk: #ffb74d;
+  --k-load: #f472b6;
+  --k-up: #5cc9f5;
+  --k-down: #57ab5a;
+  /* 状态 */
+  --k-online: #4caf50;
+  --k-offline: #f25c5c;
+  --k-warn: #ffb74d;
+  /* 标签 / 价格 chip */
+  --k-tag-bg: rgba(102, 204, 255, 0.16);
+  --k-tag-fg: #8ad4ff;
+  --k-price-bg: rgba(255, 183, 77, 0.14);
+  --k-price-fg: #ffc46b;
+  /* 到期色调 */
+  --k-expire-ok: var(--k-text-3);
+  --k-expire-urgent: #ffb74d;
+  --k-expire-expired: #ff7a7a;
+  /* 延迟 5 档 */
+  --k-lat-1: #2fc66e;
+  --k-lat-2: #9fe339;
+  --k-lat-3: #cbd83a;
+  --k-lat-4: #e2a928;
+  --k-lat-5: #f25c5c;
+  /* 悬浮提示 */
+  --k-tip-bg: rgba(0, 0, 0, 0.82);
+  --k-tip-fg: #fff;
+}
+
+:root[data-appearance="light"] {
+  --k-bg: #eef1f6;
+  --k-surface: #ffffff;
+  --k-surface-2: #f6f8fc;
+  --k-surface-hover: #eef2f8;
+  --k-border: rgba(15, 23, 42, 0.12);
+  --k-border-subtle: rgba(15, 23, 42, 0.07);
+  --k-text: #18202f;
+  --k-text-2: #52607a;
+  --k-text-3: #8b98ad;
+  --k-progress-bg: rgba(15, 23, 42, 0.1);
+  --k-cpu: #2f7fe6;
+  --k-memory: #7c5cd6;
+  --k-disk: #d97706;
+  --k-load: #d4478f;
+  --k-up: #2f7fe6;
+  --k-down: #2f9e65;
+  --k-online: #2f9e65;
+  --k-offline: #d33d3d;
+  --k-warn: #d97706;
+  --k-tag-bg: rgba(47, 127, 230, 0.12);
+  --k-tag-fg: #1f66c9;
+  --k-price-bg: rgba(217, 119, 6, 0.12);
+  --k-price-fg: #b45309;
+  --k-expire-ok: var(--k-text-3);
+  --k-expire-urgent: #d97706;
+  --k-expire-expired: #d33d3d;
+  --k-lat-1: #16a34a;
+  --k-lat-2: #65a30d;
+  --k-lat-3: #a3a21a;
+  --k-lat-4: #ca8a04;
+  --k-lat-5: #dc2626;
+  --k-tip-bg: rgba(30, 38, 52, 0.92);
+  --k-tip-fg: #fff;
+}
+
+/* 探针页 / 实例详情页根容器 */
+.komari-page,
+.instance-page {
+  background: var(--k-bg);
+}

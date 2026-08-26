@@ -19,7 +19,10 @@
           :href="item.url"
           target="_blank"
         >
-          <span class="icon-wrapper"><i :class="['bi', 'bi-' + item.icon]"></i></span>
+          <span class="icon-wrapper">
+            <img v-if="isImageIcon(item.icon)" class="social-img" :src="item.icon" alt="">
+            <i v-else :class="['bi', 'bi-' + item.icon]"></i>
+          </span>
           <span class="social-title">{{ item.name }}</span>
         </a>
       </div>
@@ -47,6 +50,10 @@ import CustomHtml from '@/pages/Layout/CustomHtml.vue'
 import { useThemeSettings } from '@/composables/useThemeSettings'
 
 const { settings } = useThemeSettings()
+
+const isImageIcon = (icon) =>
+  typeof icon === 'string' &&
+  (/^(https?:)?\/\//.test(icon) || /^data:image\//.test(icon))
 
 const hitokotoEnabled = computed(() => settings.value.enableHitokoto !== false)
 const showHomeSites = computed(() => settings.value.enableHomeSites !== false)
@@ -142,6 +149,13 @@ const showClock = computed(() => settings.value.enableClock !== false)
 
 .icon-wrapper i {
   font-size: 1.1rem;
+}
+
+.icon-wrapper .social-img {
+  width: 1.1rem;
+  height: 1.1rem;
+  object-fit: contain;
+  display: block;
 }
 
 .social-block:hover .social-title {
