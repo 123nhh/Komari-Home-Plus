@@ -1,6 +1,7 @@
 {
   "name": "komari-home",
-  "version": "0.0.0",
+  "version": "1.2.0",
+  "author": "123nhh",
   "private": true,
   "type": "module",
   "engines": {
