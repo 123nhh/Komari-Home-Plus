@@ -8,7 +8,8 @@
         </span>
         <span v-else class="k-health-value empty">—</span>
       </div>
-      <BucketBars :buckets="ping.buckets" metric="latency" :max="300" />
+      <BucketBars v-if="hasData" :buckets="ping.buckets" metric="latency" :max="300" />
+      <div v-else class="k-health-empty">未配置 Ping</div>
     </div>
     <div class="k-health-block">
       <div class="k-health-head">
@@ -18,7 +19,8 @@
         </span>
         <span v-else class="k-health-value empty">—</span>
       </div>
-      <BucketBars :buckets="ping.buckets" metric="loss" :max="100" />
+      <BucketBars v-if="hasData" :buckets="ping.buckets" metric="loss" :max="100" />
+      <div v-else class="k-health-empty">未配置 Ping</div>
     </div>
   </div>
 </template>
@@ -29,6 +31,11 @@ import BucketBars from './BucketBars.vue'
 
 const props = defineProps({
   ping: { type: Object, default: () => ({ lastValue: null, loss: null, buckets: [] }) }
+})
+
+const hasData = computed(() => {
+  const b = props.ping.buckets
+  return Array.isArray(b) && b.some(x => x && (x.latency !== null || x.loss !== null))
 })
 
 function latencyColorFor(v) {
@@ -101,5 +108,17 @@ const lossColor = computed(() => lossColorFor(props.ping.loss))
 
 .k-health-value.empty {
   color: var(--k-text-3);
+}
+
+.k-health-empty {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--k-text-3);
+  background: var(--k-surface-2);
+  border: 1px dashed var(--k-border-subtle);
+  border-radius: 6px;
 }
 </style>

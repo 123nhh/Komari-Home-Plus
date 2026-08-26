@@ -38,8 +38,8 @@ export function expireMeta(node) {
   if (days === null || days === undefined) return null
   if (days === -1 || days > 36500) return { label: '长期有效', tone: 'ok' }
   if (days <= 0) return { label: `已过期 ${Math.abs(days)} 天`, tone: 'expired' }
-  if (days <= 7) return { label: `${days} 天`, tone: 'urgent' }
-  return { label: `${days} 天`, tone: 'ok' }
+  if (days <= 7) return { label: `${days} 天到期`, tone: 'urgent' }
+  return { label: `${days} 天到期`, tone: 'ok' }
 }
 
 export function formatCycle(days) {
