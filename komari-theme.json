@@ -1,8 +1,8 @@
 {
     "name": "Komari Home Plus",
-    "short": "komarihome",
+    "short": "komarihomeplus",
     "description": "Komari-Home 与 LuminaPlus 的融合主题：个人主页 + 多视图探针 + 资产概览",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "author": "123nhh",
     "url": "https://tz.gq.ci/",
     "preview": "preview.png",
