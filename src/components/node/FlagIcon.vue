@@ -19,19 +19,17 @@ const emoji = computed(() => getFlagEmoji(props.region))
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
   flex-shrink: 0;
-  overflow: hidden;
-  background: var(--k-surface-2);
-  border: 1px solid var(--k-border-subtle);
+  /* Discord 式：纯国旗 emoji，不加边框/底色 */
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .k-flag-fallback {
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 600;
   letter-spacing: -0.3px;
   color: var(--k-text-3);

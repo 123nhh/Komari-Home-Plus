@@ -3,6 +3,7 @@
     <header class="k-card-head">
       <div class="k-card-title-block">
         <div class="k-card-title-row">
+          <FlagIcon :region="model.region" />
           <span class="k-card-name" :title="model.name">{{ model.name }}</span>
           <span class="k-card-status" :class="model.online ? 'on' : 'off'">
             <i class="bi bi-circle-fill"></i>
@@ -97,6 +98,7 @@ import { useRouter } from 'vue-router'
 import { useNodeCardModel } from '@/composables/useNodeCardModel'
 import { useThemeSettings } from '@/composables/useThemeSettings'
 import { formatBytes } from '@/utils/format'
+import FlagIcon from './FlagIcon.vue'
 import OsLogo from './OsLogo.vue'
 import IpStackBadges from './IpStackBadges.vue'
 import MetricBar from './MetricBar.vue'
