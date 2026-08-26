@@ -2,7 +2,7 @@
   <div class="footer-container">
     <div class="footer-bar">
       <span>Powered by <a href="https://github.com/komari-monitor/komari" target="_blank">Komari Monitor</a>{{ version ? ' v' + version : '' }}</span>
-      <span> With <a href="https://github.com/mogumc/Komari-Home" target="_blank">Komari-Home</a></span>
+      <span> With <a href="https://github.com/123nhh/Komari-Home-Plus" target="_blank">Komari Home Plus</a></span>
     </div>
   </div>
 </template>
