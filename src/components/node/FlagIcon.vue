@@ -19,7 +19,7 @@ const emoji = computed(() => getFlagEmoji(props.region))
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1;
   flex-shrink: 0;
   /* Discord 式：纯国旗 emoji，不加边框/底色 */
